@@ -13,4 +13,8 @@ function convertCurrency() {
             const currencyName = document.getElementById('currency').options[document.getElementById('currency').selectedIndex].text;
 
             resultElement.textContent = `Resultado: ${converted} ${currencyName}`;
+        
         }
+
+
+        
