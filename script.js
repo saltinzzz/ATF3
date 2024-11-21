@@ -1,18 +1,26 @@
 //SCRIPT DE CONVERSION DE DOLARES A OTRAS MONEDAS
-function convertCurrency() {
-            const amount = parseFloat(document.getElementById('amount').value);
-            const rate = parseFloat(document.getElementById('currency').value);
-            const resultElement = document.getElementById('result');
+function convertirMoneda() {
+            const cantidad = parseFloat(document.getElementById('cantidad').value);
+            const tasaInicial = parseFloat(document.getElementById('monedaInicial').value);
+            const tasaFinal = parseFloat(document.getElementById('monedaFinal').value);
+            const result = document.getElementById('resultado');
 
-            if (isNaN(amount) || amount <= 0) {
-                resultElement.textContent = "Por favor, ingresa una cantidad válida.";
+            if (isNaN(cantidad) || cantidad <= 0) {
+                result.textContent = "Por favor, ingresa una cantidad válida.";
+                return;
+            }
+            if (tasaInicial === tasaFinal)  {
+                result.textContent = "Selecciona monedas diferentes para realizar la conversión."
                 return;
             }
 
-            const converted = (amount * rate).toFixed(2);
-            const currencyName = document.getElementById('currency').options[document.getElementById('currency').selectedIndex].text;
+            const conversion = ((cantidad / tasaInicial) * tasaFinal).toFixed(2);
 
-            resultElement.textContent = `Resultado: ${converted} ${currencyName}`;
+            const nombremonedaInicial = document.getElementById('monedaInicial').options[document.getElementById('monedaInicial').selectedIndex].text;
+
+            const nombremonedaFinal = document.getElementById('monedaFinal').options[document.getElementById('monedaFinal').selectedIndex].text;
+
+            result.textContent = `Conversión: ${cantidad} ${nombremonedaInicial} equivale a ${conversion} ${nombremonedaFinal}`;
         
         }
         //MANUEL//
