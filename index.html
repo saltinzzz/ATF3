@@ -13,26 +13,12 @@
         <input type="number" id="amount" placeholder="Ejemplo: 100">
         <select id="currency">
             <option value="3.8">Soles (PEN)</option>
+            <option value="0.95">Euros (EUR)</option>
+            <option value="154,47">Yenes (JPY)</option>
         </select>
         <button onclick="convertCurrency()">Convertir</button>
         <h2 id="result">Resultado: -</h2>
     </div>
-    <script>
-        function convertCurrency() {
-            const amount = parseFloat(document.getElementById('amount').value);
-            const rate = parseFloat(document.getElementById('currency').value);
-            const resultElement = document.getElementById('result');
-
-            if (isNaN(amount) || amount <= 0) {
-                resultElement.textContent = "Por favor, ingresa una cantidad válida.";
-                return;
-            }
-
-            const converted = (amount * rate).toFixed(2);
-            const currencyName = document.getElementById('currency').options[document.getElementById('currency').selectedIndex].text;
-
-            resultElement.textContent = `Resultado: ${converted} ${currencyName}`;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
