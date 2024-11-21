@@ -15,6 +15,6 @@ function convertCurrency() {
             resultElement.textContent = `Resultado: ${converted} ${currencyName}`;
         
         }
+        //MANUEL//
 
 
-        
